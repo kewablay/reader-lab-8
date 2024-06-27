@@ -15,28 +15,24 @@
     />
     <!-- Google fonts Poppins end -->
 
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="/styles/index.css" />
   </head>
   <body class="max-width-container">
     <nav
       class="flex justify-between items-center p-4 md:px-6 border-b border-gray-300"
     >
       <div class="logo flex items-center gap-2 text-xl font-bold">
-        <img src="./assets/icons/logo.svg" class="size-6" alt="logo" />
+        <img src="/assets/icons/logo.svg" class="size-6" alt="logo" />
         Reader
       </div>
 
       <button>On</button>
     </nav>
 
-    <main>
-      <!-- <img src="https://covers.openlibrary.org/b/olid/OL18344414M-L.jpg" /> -->
-
-      <section id="books-container" class="grid grid-cols-3 gap-8 p-4">
-        <!-- images goes here -->
-      </section>
+    <main id="bookDetailContainer" class="mt-20 grid gap-10 md:gap-8 p-4 md:px-6 md:grid-cols-12">
+      <!-- Book details will be rendered here -->
     </main>
 
-    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="/scripts/bookDetail.js"></script>
   </body>
 </html>

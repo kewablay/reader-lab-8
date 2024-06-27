@@ -1,3 +1,5 @@
+import { searchBook } from "../services/books.services.js";
+
 function myPlugin({ swiper, extendParams, on }) {
   extendParams({
     debugger: false,
@@ -9,8 +11,13 @@ function myPlugin({ swiper, extendParams, on }) {
   });
   on("click", (swiper, e) => {
     if (!swiper.params.debugger) return;
-    // console.log("click");
+
+    let title = e.target.alt;
+    console.log("title:", title);
+    window.location.href = `/pages/bookDetail.html?title=${title}`;
+    
   });
+
   on("tap", (swiper, e) => {
     if (!swiper.params.debugger) return;
     // console.log("tap");
@@ -83,4 +90,3 @@ var swiper = new Swiper(".mySwiper", {
   // Enable debugger
   debugger: true,
 });
-
