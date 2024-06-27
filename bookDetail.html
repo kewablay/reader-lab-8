@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Book Detail</title>
+
+    <!-- Google fonts Poppins  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google fonts Poppins end -->
+
+    <link rel="stylesheet" href="styles/index.css" />
+  </head>
+  <body class="max-width-container">
+    <nav
+      class="flex justify-between items-center p-4 md:px-6 border-b border-gray-300"
+    >
+      <div class="logo flex items-center gap-2 text-xl font-bold">
+        <img src="./assets/icons/logo.svg" class="size-6" alt="logo" />
+        Reader
+      </div>
+
+      <button>On</button>
+    </nav>
+
+    <main>
+      <!-- <img src="https://covers.openlibrary.org/b/olid/OL18344414M-L.jpg" /> -->
+
+      <section id="books-container" class="grid grid-cols-3 gap-8 p-4">
+        <!-- images goes here -->
+      </section>
+    </main>
+
+    <script type="module" src="scripts/app.js"></script>
+  </body>
+</html>
