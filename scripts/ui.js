@@ -12,11 +12,14 @@ export const displayBooks = (books) => {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add(
       "swiper-slide",
-      "bg-gray-500",
+      "bg-gray-400",
       "h-[20rem]",
       "rounded-lg",
-      "overflow-hidden"
+      "overflow-hidden",
+      "shadow-2xl", 
+      "border-2",
     );
+    bookDiv.style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "
 
     // Create an img element for the book cover
     const img = document.createElement("img");
@@ -33,6 +36,21 @@ export const displayBooks = (books) => {
   });
 };
 
+export const bookLoading = () => {
+  const bookContainer = document.querySelector(".swiper-wrapper");
+  bookContainer.innerHTML = `
+  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
+  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
+  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
+  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
+  `;
+};
+
+export function clearBookLoading() {
+  const bookContainer = document.querySelector(".swiper-wrapper");
+  bookContainer.innerHTML = "";
+}
+
 export const displayBookDetail = (book) => {
   let bookDetailContainer = document.getElementById("bookDetailContainer");
   bookDetailContainer.innerHTML = `<div
@@ -42,9 +60,11 @@ export const displayBookDetail = (book) => {
           class="absolute w-[20rem] h-[20rem] rounded-full bg-[#EAEDFF]"
         ></div>
         <div
-          class="bg-gray-300 h-[20rem] w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
+          class="bg-gray-300 h-[20rem] overflow-hidden w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
         >
-          <img src=${getApiImageUrl(book.cover_i)} alt="" />
+          <img class='w-full h-full' src=${getApiImageUrl(
+            book.cover_i
+          )} alt="" />
         </div>
       </div>
 

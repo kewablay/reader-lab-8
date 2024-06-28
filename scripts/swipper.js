@@ -1,5 +1,3 @@
-import { searchBook } from "../services/books.services.js";
-
 function myPlugin({ swiper, extendParams, on }) {
   extendParams({
     debugger: false,
@@ -14,8 +12,8 @@ function myPlugin({ swiper, extendParams, on }) {
 
     let title = e.target.alt;
     console.log("title:", title);
+    // move to the book detail page
     window.location.href = `/pages/bookDetail.html?title=${title}`;
-    
   });
 
   on("tap", (swiper, e) => {
