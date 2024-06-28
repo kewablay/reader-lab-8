@@ -19,17 +19,23 @@
   </head>
   <body class="max-width-container">
     <nav
-      class="flex justify-between items-center p-4 md:px-6 border-b border-gray-300"
+      class="flex justify-between items-center p-4 md:px-6 border-b border-[var(--secondary-color)]"
     >
-      <div class="logo flex items-center gap-2 text-xl font-bold">
+      <a
+        href="/index.html"
+        class="logo flex items-center gap-2 text-xl font-bold"
+      >
         <img src="/assets/icons/logo.svg" class="size-6" alt="logo" />
         Reader
-      </div>
+      </a>
 
-      <button>On</button>
+      <button id="theme-toggle" class="p-2 border rounded">Toggle Theme</button>
     </nav>
 
-    <main id="bookDetailContainer" class="mt-20 grid gap-10 md:gap-8 p-4 md:px-6 md:grid-cols-12">
+    <main
+      id="bookDetailContainer"
+      class="mt-20 grid gap-10 md:gap-8 p-4 md:px-6 md:grid-cols-12"
+    >
       <!-- Book details will be rendered here -->
     </main>
 

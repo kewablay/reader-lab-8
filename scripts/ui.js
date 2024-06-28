@@ -12,14 +12,13 @@ export const displayBooks = (books) => {
     const bookDiv = document.createElement("div");
     bookDiv.classList.add(
       "swiper-slide",
-      "bg-gray-400",
+      // "bg-gray-400",
       "h-[20rem]",
       "rounded-lg",
       "overflow-hidden",
-      "shadow-2xl", 
-      "border-2",
+      "shadow-2xl"
     );
-    bookDiv.style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "
+    // bookDiv.style = "background: var(--secondary-dark)";
 
     // Create an img element for the book cover
     const img = document.createElement("img");
@@ -39,11 +38,14 @@ export const displayBooks = (books) => {
 export const bookLoading = () => {
   const bookContainer = document.querySelector(".swiper-wrapper");
   bookContainer.innerHTML = `
-  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
-  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
-  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
-  <div class="swiper-slide bg-gray-300 rounded-lg animate-pulse" style = "box-shadow: 5px 8px 2px 0px rgba(0, 0, 0, 0.25) "></div>
+  <div class="swiper-slide  rounded-lg animate-pulse"></div>
+  <div class="swiper-slide  rounded-lg animate-pulse"></div>
+  <div class="swiper-slide  rounded-lg animate-pulse"></div>
+  <div class="swiper-slide  rounded-lg animate-pulse"></div>
   `;
+  bookContainer.childNodes.forEach((node) => {
+    node.style = "background: var(--secondary-dark)";
+  });
 };
 
 export function clearBookLoading() {
@@ -57,10 +59,10 @@ export const displayBookDetail = (book) => {
         class="md:col-span-6 flex justify-center items-center rounded-lg relative"
       >
         <div
-          class="absolute w-[20rem] h-[20rem] rounded-full bg-[#EAEDFF]"
+          class="absolute w-[20rem] h-[20rem] rounded-full bg-[var(--secondary-dark)] -z-10" 
         ></div>
         <div
-          class="bg-gray-300 h-[20rem] overflow-hidden w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
+          class=" h-[20rem] overflow-hidden w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20" style="background: var(--secondary-dark)"
         >
           <img class='w-full h-full' src=${getApiImageUrl(
             book.cover_i
@@ -89,15 +91,15 @@ export const displayBookDetail = (book) => {
         </p>
 
         <div class="flex gap-4">
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
+          <div class="rounded-lg  px-6 py-2 h-fit" style="background: var(--secondary-light)">
             <small class="text-center">Publised Date</small>
             <p class="text-center">${book.publish_date[0]}</p>
           </div>
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
+          <div class="rounded-lg  px-6 py-2 h-fit" style="background: var(--secondary-light)">
             <small class="text-center">Publisher</small>
             <p class="truncate">${book.publisher[0]}</p>
           </div>
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
+          <div class="rounded-lg  px-6 py-2 h-fit" style="background: var(--secondary-light)">
             <small class="text-center">Read by</small>
             <p class="text-center">${book.already_read_count}</p>
           </div>
@@ -118,18 +120,18 @@ export const displayBookDetailLoading = () => {
         class="animate-pulse md:col-span-6 flex justify-center items-center rounded-lg relative"
       >
         <div
-          class="absolute w-[20rem] h-[20rem] rounded-full bg-[#EAEDFF]"
+          class="absolute w-[20rem] h-[20rem] rounded-full bg-[var(--secondary-dark)] -z-10"
         ></div>
         <div
-          class="bg-gray-300 h-[20rem] w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
+          class="skeleton h-[20rem] w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
         >
           <img src="" alt="" />
         </div>
       </div>
 
       <div class="animate-pulse about-book flex-col md:col-span-6 space-y-5">
-        <div class="text-3xl font-bold"><div class='h-8 w-[80%] rounded-full bg-gray-300'></div></div>
-        <div class="tracking-[3px] mt-4 uppercase text-gray-500"><div class='h-4 w-[12rem] rounded-full bg-gray-300'></div></div>
+        <div class="text-3xl font-bold"><div class='h-8 w-[80%] rounded-full skeleton'></div></div>
+        <div class="tracking-[3px] mt-4 uppercase text-gray-500"><div class='h-4 w-[12rem] rounded-full skeleton'></div></div>
         <div class="gap-5 flex items-center">
           <div class="flex gap-1 animate-pulse">
             <img src="/assets/icons/star.svg" alt="" />
@@ -137,33 +139,33 @@ export const displayBookDetailLoading = () => {
             <img src="/assets/icons/star.svg" alt="" />
             <img src="/assets/icons/star.svg" alt="" />
           </div>
-          <p><div class='h-4 w-[4rem] rounded-full bg-gray-300'></div></p>
+          <p><div class='h-4 w-[4rem] rounded-full skeleton'></div></p>
         </div>
         <div class="desc space-y-2">
-          <p class="w-full mt-0 h-4 rounded-full bg-gray-300"> </p>
-          <p class="w-full mt-0 h-4 rounded-full bg-gray-300"> </p>
-          <p class="w-[70%] mt-0 h-4 rounded-full bg-gray-300"> </p>
+          <p class="w-full mt-0 h-4 rounded-full skeleton"> </p>
+          <p class="w-full mt-0 h-4 rounded-full skeleton"> </p>
+          <p class="w-[70%] mt-0 h-4 rounded-full skeleton"> </p>
         </div>
 
         <div class="flex gap-4">
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
-            <div><div class='h-3 w-[3rem] mx-auto rounded-full bg-gray-300'></div></div>
-            <div><div class='h-4 mt-1 w-[5rem] rounded-full bg-gray-300'></div></div>
+          <div class="rounded-lg skeleton px-6 py-2 h-fit">
+            <div><div class='h-3 w-[3rem] mx-auto rounded-full skeleton'></div></div>
+            <div><div class='h-4 mt-1 w-[5rem] rounded-full skeleton'></div></div>
           </div>
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
-            <div><div class='h-3 w-[3rem] mx-auto rounded-full bg-gray-300'></div></div>
-            <div><div class='h-4 mt-1 w-[5rem] rounded-full bg-gray-300'></div></div>
+          <div class="rounded-lg skeleton px-6 py-2 h-fit">
+            <div><div class='h-3 w-[3rem] mx-auto rounded-full skeleton'></div></div>
+            <div><div class='h-4 mt-1 w-[5rem] rounded-full skeleton'></div></div>
           </div>
-          <div class="rounded-lg bg-gray-200 px-6 py-2 h-fit">
-            <div><div class='h-3 w-[2rem] mx-auto rounded-full bg-gray-300'></div></div>
-            <div><div class='h-4 mt-1 w-[4rem] rounded-full bg-gray-300'></div></div>
+          <div class="rounded-lg skeleton px-6 py-2 h-fit">
+            <div><div class='h-3 w-[2rem] mx-auto rounded-full skeleton'></div></div>
+            <div><div class='h-4 mt-1 w-[4rem] rounded-full skeleton'></div></div>
           </div>
         </div>
 
         <div
           class="w-full py-4 hover:brightness-150 transition-all duration-100 ease-in-out rounded-md bg-gray-400 text-white font-bold"
         >
-          <div class='h-5 mx-auto w-[8rem] rounded-full bg-gray-300'></div>
+          <div class='h-5 mx-auto w-[8rem] rounded-full skeleton'></div>
         </div>
       </div>`;
 };

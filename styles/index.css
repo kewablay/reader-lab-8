@@ -1,9 +1,27 @@
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f7f7f7;
-  letter-spacing:  -.8px;
+:root {
+  --background-color: #f7f7f7;
+  --secondary-color: #d8d8d8;
+  --secondary-light: rgb(209 213 219);
+  --secondary-dark: rgb(156 163 175);
+  --primary-color: #e06126;
+  --text-color: #000000;
 }
 
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #f5f5f5;
+  --primary-color: #03a600;
+  --secondary-light: rgb(45, 45, 45);
+  --secondary-dark: rgb(36, 36, 36);
+  --secondary-color: rgb(45, 45, 45);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  letter-spacing: -0.8px;
+  color: var(--text-color);
+}
 
 .max-width-container {
   max-width: 1200px;
@@ -11,25 +29,28 @@ body {
 }
 
 .swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
-  .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-  }
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-  }
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
 
-
-  /* #img-bg  {
+/* #img-bg  {
     background-image :linear-gradient(#eb01a595, #d1363108), url("https://images.unsplash.com/photo-1718114885158-a3157f5fc443?q=80&w=3400&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 }
    */
+
+.skeleton {
+  background-color: var(--secondary-light);
+}

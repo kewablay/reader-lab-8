@@ -61,3 +61,22 @@ export const showAnimations = () => {
     delay: 2.5,
   });
 };
+
+export const loadTheme = () => {
+  const toggleButton = document.getElementById("theme-toggle");
+
+  toggleButton.addEventListener("click", () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme); // Save the user's preference
+  });
+
+  // Load the user's preference from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+};

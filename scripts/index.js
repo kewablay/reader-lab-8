@@ -1,11 +1,11 @@
 import { getBooks } from "../services/books.services.js";
 import { bookLoading, clearBookLoading, displayBooks } from "./ui.js";
-import { showAnimations } from "./utils.js";
+import { loadTheme, showAnimations } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // GSAP Animations
   // showAnimations();
-
+  loadTheme();
   bookLoading(); // show loading animation
 
   // get books from API and display them

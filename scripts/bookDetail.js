@@ -1,12 +1,18 @@
 import { searchBook } from "../services/books.services.js";
-import { clearBookDetailLoading, displayBookDetailLoading, displayBookDetail } from "./ui.js";
-import { getQueryParams } from "./utils.js";
+import {
+  clearBookDetailLoading,
+  displayBookDetailLoading,
+  displayBookDetail,
+} from "./ui.js";
+import { getQueryParams, loadTheme } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // get books from API and display them
   //   getBooks().then((books) => {
   //     displayBooks(books);
   //   });
+
+  loadTheme();
 
   console.log("title: ", getQueryParams().title);
 
