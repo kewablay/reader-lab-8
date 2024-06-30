@@ -4,7 +4,7 @@ import { loadTheme, showAnimations } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // GSAP Animations
-  // showAnimations();
+  showAnimations();
   loadTheme();
   bookLoading(); // show loading animation
 

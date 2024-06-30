@@ -1,3 +1,5 @@
+import { displayLoadMore } from "./ui.js";
+
 function myPlugin({ swiper, extendParams, on }) {
   extendParams({
     debugger: false,
@@ -21,6 +23,7 @@ function myPlugin({ swiper, extendParams, on }) {
     // console.log("tap");
   });
   on("doubleTap", (swiper, e) => {
+    displayLoadMore()
     if (!swiper.params.debugger) return;
     // console.log("doubleTap");
   });
@@ -57,6 +60,7 @@ function myPlugin({ swiper, extendParams, on }) {
     // console.log("reachBeginning");
   });
   on("reachEnd", () => {
+   
     if (!swiper.params.debugger) return;
     // console.log("reachEnd");
   });

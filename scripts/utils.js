@@ -18,7 +18,7 @@ export const showAnimations = () => {
     y: -50,
     opacity: 0,
     ease: "power3.out",
-    delay: 0.5,
+    delay: 0.1,
   });
 
   gsap.from(".line", {
@@ -26,23 +26,25 @@ export const showAnimations = () => {
     scaleY: 0,
     transformOrigin: "top",
     ease: "power3.out",
-    delay: 1,
+    delay: .3,
   });
 
   gsap.from(".hero-text p span:nth-child(1)", {
     duration: 1,
     y: 50,
+    x: -80,
     opacity: 0,
     ease: "power3.out",
-    delay: 1.5,
+    delay: .5
   });
 
   gsap.from(".hero-text p span:nth-child(2)", {
     duration: 1,
     y: 50,
+  
     opacity: 0,
     ease: "power3.out",
-    delay: 2,
+    delay: .8,
     onComplete: () => {
       // Make the text appear from the line
       gsap.to(".hero-text p span:nth-child(2)", {
@@ -55,10 +57,26 @@ export const showAnimations = () => {
 
   gsap.from(".hero-text .sm\\:col-span-6:nth-child(2)", {
     duration: 1,
-    y: 50,
+    y: 30,
     opacity: 0,
     ease: "power3.out",
-    delay: 2.5,
+    delay: 1,
+  });
+
+  gsap.from(".navigation-btns", {
+    duration: 1,
+    // y: 30,
+    opacity: 0,
+    ease: "power3.out",
+    delay: 1.5,
+  });
+
+  gsap.from(".books-container  ", {
+    duration: 1,
+    y: 30,
+    opacity: 0,
+    ease: "power3.out",
+    delay: 1.5,
   });
 };
 

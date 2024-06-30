@@ -35,6 +35,14 @@ export const displayBooks = (books) => {
   });
 };
 
+export const displayLoadMore = () => {
+  const bookContainer = document.querySelector(".swiper-wrapper");
+  bookContainer.appendChild += `
+  <div class="swiper-slide  rounded-lg flex just-center items-center"><button class="btn btn-primary rounded-full border p-2 px-5 font-bold">Load More</button></div>
+  
+  `;
+};
+
 export const bookLoading = () => {
   const bookContainer = document.querySelector(".swiper-wrapper");
   bookContainer.innerHTML = `
@@ -59,7 +67,7 @@ export const displayBookDetail = (book) => {
         class="md:col-span-6 flex justify-center items-center rounded-lg relative"
       >
         <div
-          class="absolute w-[20rem] h-[20rem] rounded-full bg-[var(--secondary-dark)] -z-10" 
+          class="absolute w-[20rem] h-[20rem] rounded-full bg-[#6E3EBB]/15 -z-10" 
         ></div>
         <div
           class=" h-[20rem] overflow-hidden w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20" style="background: var(--secondary-dark)"
@@ -120,7 +128,7 @@ export const displayBookDetailLoading = () => {
         class="animate-pulse md:col-span-6 flex justify-center items-center rounded-lg relative"
       >
         <div
-          class="absolute w-[20rem] h-[20rem] rounded-full bg-[var(--secondary-dark)] -z-10"
+          class="absolute w-[20rem] h-[20rem] rounded-full bg-[#6E3EBB]/15 -z-10"
         ></div>
         <div
           class="skeleton h-[20rem] w-[50%] sm:w-[40%] md:w-[70%] lg:w-[16rem] rounded-lg z-20"
