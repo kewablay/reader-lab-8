@@ -35,14 +35,6 @@ export const displayBooks = (books) => {
   });
 };
 
-export const displayLoadMore = () => {
-  const bookContainer = document.querySelector(".swiper-wrapper");
-  bookContainer.appendChild += `
-  <div class="swiper-slide  rounded-lg flex just-center items-center"><button class="btn btn-primary rounded-full border p-2 px-5 font-bold">Load More</button></div>
-  
-  `;
-};
-
 export const bookLoading = () => {
   const bookContainer = document.querySelector(".swiper-wrapper");
   bookContainer.innerHTML = `

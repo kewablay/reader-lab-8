@@ -10,11 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // get books from API and display them
   getBooks().then((books) => {
-    setTimeout(() => {
-      clearBookLoading();
-      displayBooks(books);
-    }, 1000);
+    clearBookLoading();
+    displayBooks(books);
   });
 
-  // when a book is clicked show details handled inside swipper.js
+  // when a book is clicked, show details handled inside swipper.js
 });

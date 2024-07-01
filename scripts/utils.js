@@ -26,7 +26,7 @@ export const showAnimations = () => {
     scaleY: 0,
     transformOrigin: "top",
     ease: "power3.out",
-    delay: .3,
+    delay: 0.3,
   });
 
   gsap.from(".hero-text p span:nth-child(1)", {
@@ -35,16 +35,16 @@ export const showAnimations = () => {
     x: -80,
     opacity: 0,
     ease: "power3.out",
-    delay: .5
+    delay: 0.5,
   });
 
   gsap.from(".hero-text p span:nth-child(2)", {
     duration: 1,
     y: 50,
-  
+
     opacity: 0,
     ease: "power3.out",
-    delay: .8,
+    delay: 0.8,
     onComplete: () => {
       // Make the text appear from the line
       gsap.to(".hero-text p span:nth-child(2)", {
