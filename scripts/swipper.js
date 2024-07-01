@@ -1,5 +1,3 @@
-import { displayLoadMore } from "./ui.js";
-
 function myPlugin({ swiper, extendParams, on }) {
   extendParams({
     debugger: false,
