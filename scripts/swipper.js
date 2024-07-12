@@ -60,7 +60,7 @@ function myPlugin({ swiper, extendParams, on }) {
   on("reachEnd", () => {
    
     if (!swiper.params.debugger) return;
-    // console.log("reachEnd");
+    console.log("reachEnd");
   });
 }
 
