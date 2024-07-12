@@ -4,6 +4,8 @@ export const displayBooks = (books) => {
   const bookContainer = document.querySelector(".swiper-wrapper");
   console.log("Book", books);
 
+  const defaultImageUrl = "/assets/book-cover-not-found.jpeg";
+
   books.reading_log_entries.forEach((book) => {
     let singleBook = book.work;
     // console.log("Book", singleBook);
@@ -23,6 +25,9 @@ export const displayBooks = (books) => {
     // Create an img element for the book cover
     const img = document.createElement("img");
     img.src = `${getApiImageUrl(singleBook.cover_id)}`;
+    img.onerror = function () {
+      this.src = defaultImageUrl;
+    };
     img.classList.add("w-full", "h-full", "object-cover");
     img.loading = "lazy";
     img.alt = singleBook.key.split("/").pop(); // Add alt text if needed
