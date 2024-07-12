@@ -71,7 +71,7 @@ export const displayBookDetail = (book) => {
         >
           <img class='w-full h-full' src=${getApiImageUrl(
             book.cover_i
-          )} alt="" />
+          )} onerror="this.onerror=null; this.src='/assets/book-cover-not-found.jpeg';" alt="" />
         </div>
       </div>
 
